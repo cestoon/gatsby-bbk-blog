@@ -1,9 +1,20 @@
 ---
 title:  命理学批判 - 关于算命的一点思考
-date: "2023-03-19 10:05:53"
+date: "2023-01-05 10:05:53"
 description: 基于以前做的一篇日记，由命理学发端的一些纯个人想法
 ---
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
+- [1. 前言](#1-%E5%89%8D%E8%A8%80)
+- [2. 从源头说起](#2-%E4%BB%8E%E6%BA%90%E5%A4%B4%E8%AF%B4%E8%B5%B7)
+- [3. 问题出在哪？](#3-%E9%97%AE%E9%A2%98%E5%87%BA%E5%9C%A8%E5%93%AA)
+- [4. 为什么信的人那么多？](#4-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BF%A1%E7%9A%84%E4%BA%BA%E9%82%A3%E4%B9%88%E5%A4%9A)
+- [5. 信的人多了，也便成了真理](#5-%E4%BF%A1%E7%9A%84%E4%BA%BA%E5%A4%9A%E4%BA%86%E4%B9%9F%E4%BE%BF%E6%88%90%E4%BA%86%E7%9C%9F%E7%90%86)
+- [6. 什么才是真的？](#6-%E4%BB%80%E4%B9%88%E6%89%8D%E6%98%AF%E7%9C%9F%E7%9A%84)
+- [7. 后记](#7-%E5%90%8E%E8%AE%B0)
+- [参考资料](#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 ### 1. 前言
 
 写这篇文是为了破除自己的一个迷思，这是一个自我认知过程，可能幼稚，但我还是得说出来。
@@ -184,7 +195,7 @@ AI以后就要占领世界了，工作都没了，我想这些有的没的有什
 
 ---
 
-#### 参考资料：
+### 参考资料
 
 1. 易经：https://yijing.5000yan.com/qiangua/1171.html
 2. 河图洛书：https://yijing.5000yan.com/rumen/819.html
