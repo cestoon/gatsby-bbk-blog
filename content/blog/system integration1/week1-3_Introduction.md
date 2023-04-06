@@ -114,10 +114,14 @@ UML包括各种图，共三类，十三种：
  <img src="https://www.ordin.top/files/a418328e-b415-4d7f-a9ce-dd8581bdfc80.png" 
  alt="image-20230402145947279" style="zoom:40%;" />
 
-2. 活动图 activity diagram
+2. 多重性 multiplicity
+
+   <img src="https://img-blog.csdn.net/20170807195704866?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGluZzkzMDQwOA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="multiplicity" style="zoom:50%;" />
+
+3. 活动图 activity diagram
 
    <img src="./image-20230402145947279.png" alt="image-20230402145947279" style="zoom:50%;" />
-2. [时序图、活动图][4]
+4. [时序图、活动图][4]
 
 <h2 id="Requirements_Domain_Cases">Requirements, Domain, Cases 需求,领域,用例</h2>
 
