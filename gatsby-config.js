@@ -3,7 +3,7 @@ module.exports = {
     title: `BBK's zone`,
     author: {
       name: `BINGKUN FENG`,
-      summary: `who came from ChongQing China and study at DTU in Copenhagen like talking interesting things.`,
+      summary: `Who came from ChongQing China and study at DTU in Copenhagen like talking interesting things.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
@@ -93,6 +93,7 @@ module.exports = {
                     frontmatter {
                       title
                       date
+                      tags
                     }
                   }
                 }
