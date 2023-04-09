@@ -2,6 +2,7 @@
 title:  System Integration 软件开发-系统集成（2）
 date: "2023-04-04 11:32:42"
 description:  软件工程 - 系统集成 System Integration - 学习笔记（2）
+tags: ["tag1", "tag2", "tag3"]
 ---
 
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
