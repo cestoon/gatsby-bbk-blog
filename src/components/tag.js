@@ -4,7 +4,7 @@ import * as styles from "./tag.module.css";
 const _ = require("lodash")
 
 const Tag = ({ tag }) => (
-  <Link to={`/tags/${encodeURIComponent(tag)}`} className={styles.tag}>
+  <Link to={`/tags/${tag}`} className={styles.tag}>
     {tag}
   </Link>
 );

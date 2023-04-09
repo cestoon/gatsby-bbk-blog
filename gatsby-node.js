@@ -69,7 +69,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   let tags = [];
 
   // 迭代所有博客文章，收集所有标签
-  posts.nodes.forEach(({ frontmatter }) => {
+  posts.forEach(({ frontmatter }) => {
     if (frontmatter.tags) {
       tags = tags.concat(frontmatter.tags);
     }
@@ -77,14 +77,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // 去重标签
   tags = _.uniq(tags);
-
+  console.log(tags)
   // 为每个标签创建页面
   tags.forEach(tag => {
     createPage({
-      path: `/tags/${encodeURIComponent(tag.fieldValue)}/`,
+      path: `/tags/${encodeURIComponent(tag)}/`,
       component: tagTemplate,
       context: {
-        tag: tag.fieldValue,
+        tag,
       },
     });
   });
