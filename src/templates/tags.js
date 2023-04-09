@@ -8,12 +8,15 @@ import { Link, graphql } from "gatsby"
 const Tags = ({ pageContext, data, location }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
+  const { site } = data;
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
-  } tagged with "${tag}"`
+  } 篇文相关 "${tag}"`
+  const siteTitle = site.siteMetadata?.title || `Home`
 
   return (
-    <Layout location={location}>
+    <Layout location={location} title={siteTitle}>
+      
       <div>
         <h1>{tagHeader}</h1>
         <ul>
@@ -31,7 +34,7 @@ const Tags = ({ pageContext, data, location }) => {
           This links to a page that does not yet exist.
           You'll come back to it!
         */}
-        <Link to="/tags">All tags</Link>
+        <Link to="/tags">所有 tags</Link>
       </div>
     </Layout>
   )
@@ -64,6 +67,11 @@ export default Tags
 
 export const pageQuery = graphql`
   query($tag: String) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMarkdownRemark(
       limit: 2000
       sort: { frontmatter: { date: DESC }}

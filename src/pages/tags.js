@@ -17,11 +17,11 @@ const TagsPage = ({
     },
   },
 }) => (
-  <Layout location={location}>
+  <Layout location={location} title={title}>
     <div>
       <Helmet title={title} />
       <div>
-        <h1>Tags</h1>
+        <h1>标签 Tags</h1>
         <ul>
           {group.map(tag => (
             <li key={tag.fieldValue}>
