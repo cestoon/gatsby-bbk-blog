@@ -65,19 +65,29 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   }
 
-  // Extract tag data from query
-  const tags = result.data.tagsGroup.group
+  // 创建标签页
+  let tags = [];
 
-  // Make tag pages
+  // 迭代所有博客文章，收集所有标签
+  posts.nodes.forEach(({ frontmatter }) => {
+    if (frontmatter.tags) {
+      tags = tags.concat(frontmatter.tags);
+    }
+  });
+
+  // 去重标签
+  tags = _.uniq(tags);
+
+  // 为每个标签创建页面
   tags.forEach(tag => {
     createPage({
-      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      path: `/tags/${encodeURIComponent(tag.fieldValue)}/`,
       component: tagTemplate,
       context: {
         tag: tag.fieldValue,
       },
-    })
-  })
+    });
+  });
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

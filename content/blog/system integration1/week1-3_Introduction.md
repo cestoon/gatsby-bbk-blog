@@ -2,7 +2,7 @@
 title:  System Integration 软件开发-系统集成（1）
 date: "2023-04-01 17:05:25"
 description:  软件工程 - 系统集成 System Integration - 学习笔记（1）
-tags: ["tag1", "tag2", "tag3"]
+tags: ["学习笔记", "软件工程", "系统集成"]
 ---
 - [Intoduction 前言](#Intoduction-前言)
 - [UML 介绍](#UML介绍)
