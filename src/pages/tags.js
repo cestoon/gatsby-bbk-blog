@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-
+import Layout from "../components/layout"
 // Utilities
 import kebabCase from "lodash/kebabCase"
 
@@ -9,6 +9,7 @@ import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 
 const TagsPage = ({
+  location,
   data: {
     allMarkdownRemark: { group },
     site: {
@@ -16,21 +17,24 @@ const TagsPage = ({
     },
   },
 }) => (
-  <div>
-    <Helmet title={title} />
+  <Layout location={location}>
     <div>
-      <h1>Tags</h1>
-      <ul>
-        {group.map(tag => (
-          <li key={tag.fieldValue}>
-            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-              {tag.fieldValue} ({tag.totalCount})
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <Helmet title={title} />
+      <div>
+        <h1>Tags</h1>
+        <ul>
+          {group.map(tag => (
+            <li key={tag.fieldValue}>
+              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                {tag.fieldValue} ({tag.totalCount})
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
-  </div>
+  </Layout>
+
 )
 
 TagsPage.propTypes = {

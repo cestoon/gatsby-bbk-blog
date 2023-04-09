@@ -77,11 +77,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // 去重标签
   tags = _.uniq(tags);
-  console.log(tags)
   // 为每个标签创建页面
   tags.forEach(tag => {
     createPage({
-      path: `/tags/${encodeURIComponent(tag)}/`,
+      path: `/tags/${tag}/`,
       component: tagTemplate,
       context: {
         tag,
