@@ -1,3 +1,4 @@
+
 ---
 title:  施图茨的疗愈之道 （Stutz）
 date: "2023-04-10 15:45:36"
@@ -5,6 +6,16 @@ description:  从一个电影纪录片到心理工具包
 tags: ["心理学", "电影"]
 ---
 
+  - [起源](#origin)
+  - [从影片内容开始](#movie)
+  - [一篇散文](#prose)
+  - [一段友情，两个人生](#about_life)
+  - [工具（The tools）](#tools)
+  - [灵性系统](#spiritual)
+  - [其他话题](#others)
+    - [抑郁症是真的吗？](#Depression)
+    - [关于思考视觉化](#about_thinking)
+  - [结尾](#humor)
 
 <h2 id="origin">起源</h2>
 
