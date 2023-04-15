@@ -4,7 +4,6 @@ import Tag from "../components/tag";
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Search from '../components/Search';
 
 
 const BlogIndex = ({ data, location }) => {
@@ -15,7 +14,6 @@ const BlogIndex = ({ data, location }) => {
     return (
       <Layout location={location} title={siteTitle}>
         <Bio />
-        <Search /> {/* 在此处添加 Search 组件 */}
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -28,7 +26,6 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Bio />
-      <Search /> {/* 在此处添加 Search 组件 */}
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
