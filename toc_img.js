@@ -1,10 +1,36 @@
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 
 // 目录生成脚本
 const generateTOC = (filePath) => {
   try {
     const content = fs.readFileSync(filePath, 'utf8');
+    const basePath = path.dirname(filePath);
+
+    const moveAndUpdateImagePaths = (content, basePath) => {
+      const imagePattern = /<img src="\/Users\/bin\/Library\/Application Support\/typora-user-images\/(image-\S+?\..+?)" alt="\S+?" style=".+?" ?\/>/g;
+      let updatedContent = content;
+      let match;
+
+      while ((match = imagePattern.exec(content)) !== null) {
+        const oldImagePath = path.join(os.homedir(), 'Library', 'Application Support', 'typora-user-images', match[1]);
+        const newImagePath = path.join(basePath, match[1]);
+
+
+        // 复制图片
+        fs.copyFileSync(oldImagePath, newImagePath);
+
+        // 更新内容中的图片路径
+        updatedContent = updatedContent.replace(match[0], `<img src="./${match[1]}" alt="${match[1]}" style="zoom:50%;" />`);
+
+      }
+
+      return updatedContent;
+    };
+
+    const updatedImageContent = moveAndUpdateImagePaths(content, basePath);
+
     const headerPattern = /<h(\d) id="(.+?)">(.+?)<\/h\d>/g;
     let match;
     let toc = '';
@@ -34,9 +60,9 @@ const generateTOC = (filePath) => {
 
     // 在第二个分隔符下方插入目录
     const updatedContent = [
-      content.slice(0, separatorEndIndex),
+      updatedImageContent.slice(0, separatorEndIndex),
       toc,
-      content.slice(separatorEndIndex),
+      updatedImageContent.slice(separatorEndIndex),
     ].join('\n\n');
 
     fs.writeFileSync(filePath, updatedContent, 'utf8');
@@ -47,5 +73,5 @@ const generateTOC = (filePath) => {
 };
 
 // 替换以下文件路径为您要处理的本地Markdown文件的路径
-const filePath = '/Users/bin/projects/gatsby-bbk-blog/content/blog/3-stutz/Stutz.md';
+const filePath = '/Users/bin/projects/gatsby-bbk-blog/content/blog/4-MAS/week1_3intro.md';
 generateTOC(filePath);

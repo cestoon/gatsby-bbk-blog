@@ -118,6 +118,39 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
-    }
+    },
+    {
+      resolve: 'gatsby-plugin-local-search',
+      options: {
+        name: 'pages',
+        engine: 'lunr',
+        query: `
+          {
+            allMarkdownRemark {
+              nodes {
+                id
+                frontmatter {
+                  title
+                  path
+                  tags // 添加 tags
+                }
+                rawMarkdownBody
+              }
+            }
+          }
+        `,
+        ref: 'id',
+        index: ['title', 'body', 'tags'], // 添加 tags
+        store: ['id', 'path', 'title', 'tags'], // 添加 tags
+        normalizer: ({ data }) =>
+          data.allMarkdownRemark.nodes.map((node) => ({
+            id: node.id,
+            path: node.frontmatter.path,
+            title: node.frontmatter.title,
+            tags: node.frontmatter.tags, // 添加 tags
+            body: node.rawMarkdownBody,
+          })),
+      },
+    },    
   ],
 }
