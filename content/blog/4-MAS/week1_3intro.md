@@ -1,7 +1,7 @@
 ---
 title:  人工智能 - 多代理系统 (Multi-agent system)（1）
 date: "2023-04-13 14:26:08"
-description:  人工智能 - 多代理系统 (Multi-agent system) ， 学习笔记1 ： 自动规划与启发式
+description:  人工智能 - 多代理系统 (Multi-agent system) - 学习笔记1 ： 自动规划与启发式
 tags: ["学习笔记", "人工智能", "多代理系统"]
 ---
 
