@@ -1,8 +1,8 @@
 ---
-title:  人工智能 - 多代理系统 (Multi-agent system)（2）
+title:  人工智能 - 多智能体系统 (Multi-agent system)（2）
 date: "2023-04-15 18:39:38"
-description:  人工智能 - 多代理系统 (Multi-agent system) - 学习笔记2 - 部分顺序规划 分层任务网络 多代理规划
-tags: ["学习笔记", "人工智能", "多代理系统"]
+description:  人工智能 - 多智能体系统 (Multi-agent system) - 学习笔记2 - 部分顺序规划 分层任务网络 多智能体规划
+tags: ["学习笔记", "人工智能", "多智能体系统"]
 ---
 
   - [Partial-order planning and hierarchical task networks 偏序计划和分层任务网络](#w4_Partial-order_planning_and_hierarchical_task_networks)
@@ -16,11 +16,11 @@ tags: ["学习笔记", "人工智能", "多代理系统"]
       - [HTN refinements - HTN 细化](#w4_HTN_refinements)
       - [HTN planning example - HTN规划示例](#w4_HTN_Planning_example)
       - [HTN 小结](#w4_HTN)
-  - [Multiagent planning 多代理规划](#w5_Multiagent_planning)
+  - [Multiagent planning 多智能体规划](#w5_Multiagent_planning)
     - [Online planning 在线规划](#w5_Online_planning)
       - [Execution monitoring 执行监控](#w5_Execution_monitoring)
-      - [Multibody and multiagent planning 多体和多代理规划](#w5_Multibody-and-multiagent-planning)
-    - [Multiagent architectures 多代理架构](#w5_Multiagent-architectures)
+      - [Multibody and multiagent planning 多体和多智能体规划](#w5_Multibody-and-multiagent-planning)
+    - [Multiagent architectures 多智能体架构](#w5_Multiagent-architectures)
       - [Cooperative distributed problem solving (CDPS) 合作分布式问题解决](#w5_CDPS)
       - [Partial global planning (Durfee, 1988) 局部全局规划](#w5_Partial-global)
       - [subgoal interaction 子目标交互](#w2_subgoal-interaction)
@@ -205,12 +205,12 @@ HTN的最大优势：可以以沿轴从纯命令式（无搜索）到纯声明�
 
 
 
-<h2 id="w5_Multiagent_planning">Multiagent planning 多代理规划</h2>
+<h2 id="w5_Multiagent_planning">Multiagent planning 多智能体规划</h2>
 在经典的规划领域里面(PDDL - Planning Domain Definition Language)，有几个特点
 - 环境是确定的、可完全观测的、静态的
 - 规划时离线的
-- 环境只有单个代理（只有一个规划行动者）
-接下来正式考虑多代理的问题
+- 环境只有单个智能体（只有一个规划行动者）
+接下来正式考虑多智能体的问题
 
 <h3 id="w5_Online_planning">Online planning 在线规划</h3>
 
@@ -222,7 +222,7 @@ HTN的最大优势：可以以沿轴从纯命令式（无搜索）到纯声明�
 
 其实replanning很多时候是迫不得已......因为真实世界并不知道所有信息，很多动作导致的后果（effect）是无法提前考虑的
 
-所以简单的搜索/规划（search / planning）算法是不够的，我们需要将规划算法嵌入到更大的感知-规划-行动代理循环中。
+所以简单的搜索/规划（search / planning）算法是不够的，我们需要将规划算法嵌入到更大的感知-规划-行动智能体循环中。
 
 <h4 id="w5_Execution_monitoring">Execution monitoring 执行监控</h4>
 
@@ -235,28 +235,28 @@ HTN的最大优势：可以以沿轴从纯命令式（无搜索）到纯声明�
 3. 目标监控：当前目标是否合理？
    动作执行前，检查是否有更好的目标，这需要一定程度的意向性（**intentionality**）判断
 
-<h4 id="w5_Multibody-and-multiagent-planning">Multibody and multiagent planning 多体和多代理规划</h4>
+<h4 id="w5_Multibody-and-multiagent-planning">Multibody and multiagent planning 多体和多智能体规划</h4>
 
 1. **Multibody planning 多体规划**：
-   指的是单个代理对多个实体进行规划(centralised system)，比如，一个小人推多个箱子
+   指的是单个智能体对多个实体进行规划(centralised system)，比如，一个小人推多个箱子
 
-2. **Multiagent planning 多代理规划**：
-   多个独立的代理（几个自主的、主动的、目标导向的实体），比如，多个小人推多个箱子
-   在这个情况下，目标可以是单独的，也可以是公共的，甚至是冲突的。多个代理需要合作、妥协。
+2. **Multiagent planning 多智能体规划**：
+   多个独立的智能体（几个自主的、主动的、目标导向的实体），比如，多个小人推多个箱子
+   在这个情况下，目标可以是单独的，也可以是公共的，甚至是冲突的。多个智能体需要合作、妥协。
    因此也带来了很多挑战，比如沟通、协调、死锁处理 etc.
-思考一个问题，既然多代理带来了这么多挑战，是不是其实中心化的系统（多体规划）才更好？
+思考一个问题，既然多智能体带来了这么多挑战，是不是其实中心化的系统（多体规划）才更好？
 不是的，回想一下，多体规划是一串的动作<a1 ... an>，假设每个动作的分支是b, 整个空间将达到$b^{n}$, 过于爆炸了。我们可以用POP规划来缓解一下这个爆炸，因为POP它能解耦，补一下子考虑那么多问题。试想多个agent进行POP操作呢，是不是问题更加简化捏。
 通俗的来说
 传统规划和pop比，就是“长远规划 vs 走一步看一步”
-多体与多代理比，就是“三个臭皮匠、顶一个诸葛亮”
+多体与多智能体比，就是“三个臭皮匠、顶一个诸葛亮”
 
-<h3 id="w5_Multiagent-architectures">Multiagent architectures 多代理架构</h3>
-多代理架构主要处理的就是代理他们相互之间以及和系统之间交互的协议
+<h3 id="w5_Multiagent-architectures">Multiagent architectures 多智能体架构</h3>
+多智能体架构主要处理的就是智能体他们相互之间以及和系统之间交互的协议
 接下来聊架构内部的逻辑
 <h4 id="w5_CDPS">Cooperative distributed problem solving (CDPS) 合作分布式问题解决</h4>
 这是一个agent之间分配任务的模式，分三步
 - 问题分解：可能使用HTNs
-- 子问题解决：这部分通常需要处理代理之间通信
+- 子问题解决：这部分通常需要处理智能体之间通信
 - 问题合成：子问题合成总体问题
 
 CDPS 终点需要考虑两个问题：
@@ -273,7 +273,7 @@ CDPS 终点需要考虑两个问题：
    <img src="./image-20230416213453453.png" alt="image-20230416213453453.png" style="zoom:50%;" />
    如图，如果s占用了r的资源，s需要广播，r就得改计划。如果r改不了计划，就会陷入死锁。这种情况下，r需要执行中心规划（多体规划），来为这个子问题相关的机器人解除死锁。
 
-在玛莎项目中，能够把问题复杂度减少至线性的。在代理之中分配任务规划只是任务分解的一种。
+在玛莎项目中，能够把问题复杂度减少至线性的。在智能体之中分配任务规划只是任务分解的一种。
 不过大体思路都是这样子的
 
 1. 假装每个单独问题都能解决，实现问题的解耦（relax problem）
@@ -282,9 +282,9 @@ CDPS 终点需要考虑两个问题：
 
 **再精简一点就是relax -> solve -> unrelax。**
 <h4 id="w5_Partial-global">Partial global planning (Durfee, 1988) 局部全局规划</h4>
-这是另外一个架构，CDPS是直接拆分目标，需要有一个拆分目标的中心。而局部全局规划则是让代理生成目标，步骤如下
+这是另外一个架构，CDPS是直接拆分目标，需要有一个拆分目标的中心。而局部全局规划则是让智能体生成目标，步骤如下
 
-1. **本地计划生成 local plan formulation:**  每个代理决定自己的目标是什么并生成短期计划（局部计划），这个计划并不要求一定达到目标
+1. **本地计划生成 local plan formulation:**  每个智能体决定自己的目标是什么并生成短期计划（局部计划），这个计划并不要求一定达到目标
 2. **局部全局计划建设和修改 partial global plan construction and modification：**把所有局部计划整合为一个大的局部计划，这个新计划需要修改为更合理的计划（去掉冲突和冗余）
 3. 执行
 若精简一下这个思路：分解 -> 解决子问题 -> 问题合成
@@ -302,7 +302,7 @@ PGP则是下级提目标，然后上级再协调，然后再做
 <img src="./image-20230416220746518.png" alt="image-20230416220746518.png" style="zoom:50%;" />
 假设有俩子目标 On(A,B) On(B,C), 然后一个蓝色agent分配了子目标 On(A,B)，红色agent 分配了 On(B,C)。很明显他们不能同时执行，因为这里有**并发动作约束**（ **Concurrent action constraints**：约束哪些动作必须或不能与一个动作同时执行），需要协调。
 
-红蓝代理的计划如下：
+红蓝智能体的计划如下：
 
 <img src="./image-20230416220927730.png" alt="image-20230416220927730.png" style="zoom:50%;" />
 然鹅，冲突了，若c上有B就不能把c放在桌子上了（用precondition判断）

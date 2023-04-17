@@ -1,8 +1,8 @@
 ---
-title:  人工智能 - 多代理系统 (Multi-agent system)（1）
+title:  人工智能 - 多智能体系统 (Multi-agent system)（1）
 date: "2023-04-13 14:26:08"
-description:  人工智能 - 多代理系统 (Multi-agent system) - 学习笔记1 ： 自动规划与启发式
-tags: ["学习笔记", "人工智能", "多代理系统"]
+description:  人工智能 - 多智能体系统 (Multi-agent system) - 学习笔记1 ： 自动规划与启发式
+tags: ["学习笔记", "人工智能", "多智能体系统"]
 ---
 
   - [写在开头](#w1_intro)
@@ -30,7 +30,7 @@ tags: ["学习笔记", "人工智能", "多代理系统"]
 
 这是一门课程的个人梳理笔记，最开始选这门课的时候完全冲着AI两个字就去了，实际上人工智能（AI）研究领域十分广泛，热门的有机器学习（Machine Learning）、深度学习（Deep Learning）、计算机视觉（Computer Vision）、语音识别（Speech Recognition）以及产生了ChatGPT的自然语言处理（Natural Language Processing，NLP）。
 
-选课的时候完全忽略了副标题**Multi-agent system（多代理系统，简称MAS）**，准确的说课程内容主要是有关MAS的**automated planning（自动规划）**。与也是学习之后才意识到，MAS在人工智能领域更偏向研究智能体之间互相协调的问题，目标是让一个个智能体合作起来解决更大更复杂的问题，当然也研究与人类的协作。在科学家追求实现通用人工智能——即超过人类智力的AI——的过程中，它并不是最前排的那个领域。
+选课的时候完全忽略了副标题**Multi-agent system（多智能体系统，简称MAS）**，准确的说课程内容主要是有关MAS的**automated planning（自动规划）**。与也是学习之后才意识到，MAS在人工智能领域更偏向研究智能体之间互相协调的问题，目标是让一个个智能体合作起来解决更大更复杂的问题，当然也研究与人类的协作。在科学家追求实现通用人工智能——即超过人类智力的AI——的过程中，它并不是最前排的那个领域。
 
 目前大语言模型（LLM）爆火，实现通用人工智能曙光初现，但不管未来出现多聪明的AI，最后还是要在人类社会中去协作和竞争，好好了解一下这个领域还是很有价值的。
 
@@ -41,7 +41,7 @@ tags: ["学习笔记", "人工智能", "多代理系统"]
 1. 网购平台使用的一个个仓储物流机器人。
    <img src="https://www.waredock.com/wp-content/uploads/2019/08/Screenshot-2019-08-01-at-22.50.57.png" alt="What is Amazon Robotic Fulfillment Center? | Waredock" style="zoom:30%;" />
 2. 一起踢足球的机器人运动员
-3. 自动从互联网提取信息并处理的多代理程序
+3. 自动从互联网提取信息并处理的多智能体程序
 
 **写在前面：**MAS是一整个学科领域，内容庞杂，课程内容也主要是自动规划相关；笔者水平也有限，本博客只是学习笔记，对得起自己就好。
 
@@ -49,7 +49,7 @@ tags: ["学习笔记", "人工智能", "多代理系统"]
 
 <h2 id="w1_AI_search_basics">AI search basics - 人工智能搜索基础</h2>
 
-当前并不涉及具体多代理的范围，先从搜索的基础问题入手
+当前并不涉及具体多智能体的范围，先从搜索的基础问题入手
 
 <h3 id="w1_Search_problem">Search problem 搜索问题</h3>
 
