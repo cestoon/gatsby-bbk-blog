@@ -19,12 +19,9 @@ tags: ["学习笔记", "人工智能", "多智能体系统"]
       - [About (function-free) first-order logic 关于无功能一阶逻辑](#w2_logic)
     - [PDDL 详解](#w2_PDDL_structure)
       - [search vs PDDL](#w2_search_vs_PDDL)
-      - [PDDL小结](#w2_summary)
+    - [PDDL小结](#w2_summary)
   - [Domain-independendent heuristics 领域无关启发式](#w3_Domain-independendent_heuristics)
     - [Domain-independendent heuristics design](#w3_DIH_design)
-
-
-
 
 <h2 id="w1_intro">写在开头</h2>
 
