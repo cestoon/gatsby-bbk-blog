@@ -20,7 +20,8 @@ tags: ["学习笔记", "分布式系统"]
     - [Interaction Model 交互模型](#w1_Interaction-Model)
       - [进程与沟通信道](#w1_communication_channels)
       - [交互模型的变体](#w1_variants-of-interaction)
-    - [分布式模型的设计挑战](#w1_design challenges)
+    - [分布式模型的设计挑战](#w1_design-challenges)
+    - [思考题](#questions)
 
 
 
@@ -369,7 +370,7 @@ web的主要技术有以下几个
 
 
 
-<h3 id="w1_design challenges">分布式模型的设计挑战</h3>
+<h3 id="w1_design-challenges">分布式模型的设计挑战</h3>
 
 先列举一下要考虑到的挑战
 
@@ -490,7 +491,7 @@ web的主要技术有以下几个
 
      在异步分布式系统中，超载的服务器可能会响应过慢，但我们不能说它有时序故障，因为没有提供任何保证。
 
-**思考题：**
+<h2 id="questions">思考题</h2>
 
 1. **(1)  What is an architectural model of a distributed system? 分布式系统的架构模型是什么？**
 
