@@ -73,5 +73,5 @@ const generateTOC = (filePath) => {
 };
 
 // 替换以下文件路径为您要处理的本地Markdown文件的路径
-const filePath = '/Users/bin/projects/gatsby-bbk-blog/content/blog/5-distributed-sys1/week1.md';
+const filePath = '/Users/bin/projects/gatsby-bbk-blog/content/blog/Algorithm-big-data/note1-week1-Hashing.md';
 generateTOC(filePath);
