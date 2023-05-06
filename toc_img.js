@@ -9,25 +9,36 @@ const generateTOC = (filePath) => {
     const basePath = path.dirname(filePath);
 
     const moveAndUpdateImagePaths = (content, basePath) => {
-      const imagePattern = /<img src="\/Users\/bin\/Library\/Application Support\/typora-user-images\/(image-\S+?\..+?)" alt="\S+?" style=".+?" ?\/>/g;
+      const imagePattern1 = /<img src="\/Users\/bin\/Library\/Application Support\/typora-user-images\/(image-\S+?\..+?)" alt="\S+?" style=".+?" ?\/>/g;
+      const imagePattern2 = /!\[(image-\S+?)\]\(\/Users\/bin\/Library\/Application Support\/typora-user-images\/(image-\S+?\..+?)\)/g;
       let updatedContent = content;
       let match;
-
-      while ((match = imagePattern.exec(content)) !== null) {
+    
+      while ((match = imagePattern1.exec(content)) !== null) {
         const oldImagePath = path.join(os.homedir(), 'Library', 'Application Support', 'typora-user-images', match[1]);
         const newImagePath = path.join(basePath, match[1]);
-
-
+    
         // 复制图片
         fs.copyFileSync(oldImagePath, newImagePath);
-
+    
         // 更新内容中的图片路径
         updatedContent = updatedContent.replace(match[0], `<img src="./${match[1]}" alt="${match[1]}" style="zoom:50%;" />`);
-
       }
-
+    
+      while ((match = imagePattern2.exec(content)) !== null) {
+        const oldImagePath = path.join(os.homedir(), 'Library', 'Application Support', 'typora-user-images', match[2]);
+        const newImagePath = path.join(basePath, match[2]);
+    
+        // 复制图片
+        fs.copyFileSync(oldImagePath, newImagePath);
+    
+        // 更新内容中的图片路径
+        updatedContent = updatedContent.replace(match[0], `![${match[1]}](./${match[2]})`);
+      }
+    
       return updatedContent;
     };
+    
 
     const updatedImageContent = moveAndUpdateImagePaths(content, basePath);
 
