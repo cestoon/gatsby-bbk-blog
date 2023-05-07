@@ -1,6 +1,6 @@
 ---
 title:  大规模数据集算法 - Integer Data Structures II：
-date: "2023-05-7 13:58:08"
+date: "2023-05-06 13:58:08"
 description:  算法- 学习笔记2 ： 区间最小值查询（Range Minimum Queries，RMQ）和最近公共祖先（Lowest Common Ancestor，LCA), Trees; Level Ancestor, Path Decompositions, Tree Decompositions
 tags: ["算法", "数据结构", "学习笔记"]
 
