@@ -1,7 +1,7 @@
 ---
-title:  大规模数据集算法 - Integer Data Structures：
+title:  大规模数据集算法 - Integer Data Structures I：
 date: "2023-05-05 14:14:26"
-description:  算法- 学习笔记1 ： 字典、通用哈希和完美哈希
+description:  算法- 学习笔记1 ： 字典、通用哈希和完美哈希; Predecessor Problem（前驱问题），数据结构 - van Emde Boas，x-Fast和y-Fast Tries;
 tags: ["算法", "数据结构", "学习笔记"]
 ---
 
