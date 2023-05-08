@@ -6,7 +6,7 @@ tags: ["算法", "数据结构", "学习笔记"]
 ---
 
   - [写在开头](#w1_intro)
-    - [Hashing 哈希](#Hashing)
+  - [Hashing 哈希](#Hashing)
     - [Dictionaries problem 字典问题](#Dictionaries)
     - [Chained Hashing 链式哈希](#Chained-Hashing)
     - [Universal Hashing 通用哈希](#Universal-Hashing)
@@ -23,7 +23,7 @@ tags: ["算法", "数据结构", "学习笔记"]
 
 算法是用来解决问题的，也就是说，是先有客观实在的某种问题，再后来发展的算法。算法是抽象的，这种抽象性让它能匹配特定领域的问题，但其依然是存在于人脑中的符号系统。这套符号系统是处理复杂问题的思路，是一种思维的延伸。因为计算机的缘故，如今算法脱离了数学家哲学家思维游戏的范畴，生来就是为了优化空间与时间的复杂度，让计算机能更快更省的解决问题。
 
-<h3 id="Hashing">Hashing 哈希</h3>
+<h2 id="Hashing">Hashing 哈希</h2>
 
 "Hash" 这个词原本是英语中的一个动词，意思是将食物切成小块或将物品搅拌混合。用在计算机科学中，"hash" 被引用为一个专有名词，表示一种用于将数据转换成函数。
 
